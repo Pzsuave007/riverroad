@@ -36,15 +36,15 @@ export default function About() {
               className="absolute inset-0 h-full w-full object-cover img-desat"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-orange-500/40 bg-zinc-950/80 backdrop-blur-sm">
+            <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-red-500/40 bg-zinc-950/80 backdrop-blur-sm">
               <div className="font-display uppercase tracking-tighter text-3xl text-white">
                 Built by a<br />
-                <span className="text-orange-500">Woman.</span> Engineered for Work.
+                <span className="text-red-500">Woman.</span> Engineered for Work.
               </div>
             </div>
           </div>
-          <div className="absolute -top-4 -left-4 h-16 w-16 border-l-2 border-t-2 border-orange-500 z-0" />
-          <div className="absolute -bottom-4 -right-4 h-16 w-16 border-r-2 border-b-2 border-orange-500 z-0" />
+          <div className="absolute -top-4 -left-4 h-16 w-16 border-l-2 border-t-2 border-red-500 z-0" />
+          <div className="absolute -bottom-4 -right-4 h-16 w-16 border-r-2 border-b-2 border-red-500 z-0" />
         </motion.div>
 
         <motion.div
@@ -55,8 +55,8 @@ export default function About() {
           className="lg:col-span-7"
         >
           <div className="flex items-center gap-3 mb-4">
-            <span className="h-px w-10 bg-orange-500" />
-            <span className="text-xs uppercase tracking-[0.35em] text-orange-500 font-bold">
+            <span className="h-px w-10 bg-red-500" />
+            <span className="text-xs uppercase tracking-[0.35em] text-red-500 font-bold">
               About River Road
             </span>
           </div>
@@ -68,7 +68,7 @@ export default function About() {
             A Woman-Owned Oregon
             <br />
             Business Built on{" "}
-            <span className="text-orange-500">Integrity.</span>
+            <span className="text-red-500">Integrity.</span>
           </h2>
 
           <div className="mt-6 space-y-4 text-zinc-300 text-base leading-relaxed max-w-2xl">
@@ -93,9 +93,9 @@ export default function About() {
             {PILLARS.map((p) => (
               <div
                 key={p}
-                className="flex items-start gap-3 border-l-2 border-orange-500/60 pl-4 py-1"
+                className="flex items-start gap-3 border-l-2 border-red-500/60 pl-4 py-1"
               >
-                <CheckCircle2 className="h-5 w-5 text-orange-500 flex-shrink-0 mt-0.5" />
+                <CheckCircle2 className="h-5 w-5 text-red-500 flex-shrink-0 mt-0.5" />
                 <span className="text-zinc-200 text-sm font-medium">{p}</span>
               </div>
             ))}

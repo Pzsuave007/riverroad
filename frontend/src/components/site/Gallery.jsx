@@ -45,8 +45,8 @@ export default function Gallery() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <span className="h-px w-10 bg-orange-500" />
-              <span className="text-xs uppercase tracking-[0.35em] text-orange-500 font-bold">
+              <span className="h-px w-10 bg-red-500" />
+              <span className="text-xs uppercase tracking-[0.35em] text-red-500 font-bold">
                 Project Gallery
               </span>
             </div>
@@ -54,11 +54,11 @@ export default function Gallery() {
               data-testid="gallery-heading"
               className="font-display uppercase font-bold tracking-tighter text-4xl sm:text-5xl lg:text-6xl text-white leading-[0.95]"
             >
-              See Our Work <span className="text-orange-500">in Action.</span>
+              See Our Work <span className="text-red-500">in Action.</span>
             </h2>
           </div>
           <p className="text-zinc-400 max-w-md text-sm flex items-start gap-2">
-            <Camera className="h-4 w-4 mt-0.5 text-orange-500 flex-shrink-0" />
+            <Camera className="h-4 w-4 mt-0.5 text-red-500 flex-shrink-0" />
             Recent fabrication, welding repairs, and aggregate equipment
             installations. More project photos coming soon.
           </p>
@@ -88,7 +88,7 @@ export default function Gallery() {
                 <span className="text-white text-xs sm:text-sm font-bold uppercase tracking-wider">
                   {g.label}
                 </span>
-                <span className="h-2 w-2 bg-orange-500" />
+                <span className="h-2 w-2 bg-red-500" />
               </figcaption>
             </motion.figure>
           ))}

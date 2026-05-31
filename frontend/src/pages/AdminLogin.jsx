@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import { Loader2, Flame, ArrowLeft } from "lucide-react";
+import { Loader2, ArrowLeft } from "lucide-react";
+
+const LOGO_SRC = "/brand/river-road-logo.jpeg";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -43,30 +45,25 @@ export default function AdminLogin() {
       data-testid="admin-login-page"
       className="min-h-screen flex items-center justify-center bg-zinc-950 bg-grid px-4 py-12 relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-600/10 via-zinc-950 to-zinc-950" />
+      <div className="absolute inset-0 bg-gradient-to-br from-red-600/10 via-zinc-950 to-zinc-950" />
       <div className="relative w-full max-w-md">
         <Link
           to="/"
           data-testid="admin-back-link"
-          className="inline-flex items-center gap-2 text-zinc-500 hover:text-orange-500 text-xs uppercase tracking-[0.25em] font-bold mb-6"
+          className="inline-flex items-center gap-2 text-zinc-500 hover:text-red-500 text-xs uppercase tracking-[0.25em] font-bold mb-6"
         >
           <ArrowLeft className="h-4 w-4" />
           Back to site
         </Link>
 
         <div className="bg-zinc-900 border border-zinc-800 p-8 lg:p-10">
-          <div className="flex items-center gap-3 mb-8">
-            <span className="h-10 w-10 grid place-items-center bg-orange-600 text-white">
-              <Flame className="h-5 w-5" />
-            </span>
-            <div>
-              <div className="font-display uppercase tracking-tight font-bold text-white text-xl leading-tight">
-                Admin Console
-              </div>
-              <div className="text-[10px] tracking-[0.3em] text-orange-500 font-bold uppercase">
-                River Road Metal
-              </div>
-            </div>
+          <img
+            src={LOGO_SRC}
+            alt="River Road Custom Metal Fabrication"
+            className="h-16 w-auto object-contain mb-6"
+          />
+          <div className="text-[10px] tracking-[0.3em] text-red-500 font-bold uppercase mb-8">
+            Admin Console
           </div>
 
           <h1 className="font-display uppercase tracking-tighter font-bold text-3xl text-white mb-2">
@@ -88,7 +85,7 @@ export default function AdminLogin() {
                 onChange={(e) => setEmail(e.target.value)}
                 data-testid="admin-login-email"
                 placeholder="admin@riverroadmetal.com"
-                className="bg-zinc-950 border-zinc-700 focus-visible:ring-orange-500 focus-visible:border-orange-500 text-white rounded-none h-11"
+                className="bg-zinc-950 border-zinc-700 focus-visible:ring-red-500 focus-visible:border-red-500 text-white rounded-none h-11"
               />
             </div>
             <div className="space-y-2">
@@ -102,14 +99,14 @@ export default function AdminLogin() {
                 onChange={(e) => setPassword(e.target.value)}
                 data-testid="admin-login-password"
                 placeholder="••••••••"
-                className="bg-zinc-950 border-zinc-700 focus-visible:ring-orange-500 focus-visible:border-orange-500 text-white rounded-none h-11"
+                className="bg-zinc-950 border-zinc-700 focus-visible:ring-red-500 focus-visible:border-red-500 text-white rounded-none h-11"
               />
             </div>
             <Button
               type="submit"
               disabled={loading}
               data-testid="admin-login-submit"
-              className="w-full rounded-none h-12 bg-orange-600 hover:bg-orange-500 text-white uppercase font-bold tracking-widest"
+              className="w-full rounded-none h-12 bg-red-600 hover:bg-red-500 text-white uppercase font-bold tracking-widest"
             >
               {loading ? (
                 <>

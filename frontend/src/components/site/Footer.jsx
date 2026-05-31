@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
-import { Flame, Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { COMPANY } from "@/lib/constants";
+
+const LOGO_SRC = "/brand/river-road-logo.jpeg";
 
 export default function Footer() {
   return (
@@ -10,23 +12,17 @@ export default function Footer() {
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16 grid grid-cols-1 md:grid-cols-12 gap-10">
         <div className="md:col-span-5 space-y-5">
-          <div className="flex items-center gap-3">
-            <span className="h-10 w-10 grid place-items-center bg-orange-600 text-white">
-              <Flame className="h-5 w-5" />
-            </span>
-            <div className="font-display uppercase tracking-tight font-bold">
-              <div className="text-white text-lg leading-tight">River Road</div>
-              <div className="text-[10px] text-orange-500 tracking-[0.25em]">
-                METAL FABRICATION
-              </div>
-            </div>
-          </div>
+          <img
+            src={LOGO_SRC}
+            alt="River Road Custom Metal Fabrication"
+            className="h-20 w-auto object-contain"
+          />
           <p className="text-sm text-zinc-400 max-w-sm">
             A woman-owned Oregon business providing custom metal fabrication,
             welding, heavy equipment repair, and aggregate equipment solutions
             built to perform.
           </p>
-          <div className="inline-block border border-orange-500/40 px-3 py-1 text-[10px] uppercase tracking-[0.3em] text-orange-500 font-bold">
+          <div className="inline-block border border-red-500/40 px-3 py-1 text-[10px] uppercase tracking-[0.3em] text-red-500 font-bold">
             Built Strong • Built Local • Built Right
           </div>
         </div>
@@ -37,7 +33,7 @@ export default function Footer() {
           </div>
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-3 text-zinc-300">
-              <MapPin className="h-4 w-4 text-orange-500 mt-0.5" />
+              <MapPin className="h-4 w-4 text-red-500 mt-0.5" />
               <span>
                 {COMPANY.street}
                 <br />
@@ -48,9 +44,9 @@ export default function Footer() {
               <a
                 href={`tel:${COMPANY.phoneTel}`}
                 data-testid="footer-phone"
-                className="flex items-center gap-3 text-zinc-300 hover:text-orange-500"
+                className="flex items-center gap-3 text-zinc-300 hover:text-red-500"
               >
-                <Phone className="h-4 w-4 text-orange-500" />
+                <Phone className="h-4 w-4 text-red-500" />
                 {COMPANY.phone}
               </a>
             </li>
@@ -58,14 +54,14 @@ export default function Footer() {
               <a
                 href={`mailto:${COMPANY.email}`}
                 data-testid="footer-email"
-                className="flex items-center gap-3 text-zinc-300 hover:text-orange-500 break-all"
+                className="flex items-center gap-3 text-zinc-300 hover:text-red-500 break-all"
               >
-                <Mail className="h-4 w-4 text-orange-500" />
+                <Mail className="h-4 w-4 text-red-500" />
                 {COMPANY.email}
               </a>
             </li>
             <li className="flex items-center gap-3 text-zinc-300">
-              <Clock className="h-4 w-4 text-orange-500" />
+              <Clock className="h-4 w-4 text-red-500" />
               {COMPANY.hours}
             </li>
           </ul>
@@ -86,7 +82,7 @@ export default function Footer() {
               <li key={label}>
                 <a
                   href={href}
-                  className="text-zinc-400 hover:text-orange-500 transition-colors uppercase tracking-wider text-xs font-semibold"
+                  className="text-zinc-400 hover:text-red-500 transition-colors uppercase tracking-wider text-xs font-semibold"
                 >
                   {label}
                 </a>
@@ -96,7 +92,7 @@ export default function Footer() {
               <Link
                 to="/admin/login"
                 data-testid="footer-admin-link"
-                className="text-zinc-600 hover:text-orange-500 uppercase tracking-wider text-xs font-semibold"
+                className="text-zinc-600 hover:text-red-500 uppercase tracking-wider text-xs font-semibold"
               >
                 Admin Login
               </Link>

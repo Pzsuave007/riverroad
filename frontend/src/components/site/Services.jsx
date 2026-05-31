@@ -81,8 +81,8 @@ export default function Services() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <span className="h-px w-10 bg-orange-500" />
-              <span className="text-xs uppercase tracking-[0.35em] text-orange-500 font-bold">
+              <span className="h-px w-10 bg-red-500" />
+              <span className="text-xs uppercase tracking-[0.35em] text-red-500 font-bold">
                 What We Do
               </span>
             </div>
@@ -92,7 +92,7 @@ export default function Services() {
             >
               Services Engineered
               <br />
-              <span className="text-orange-500">for Demanding Work.</span>
+              <span className="text-red-500">for Demanding Work.</span>
             </h2>
           </div>
           <p className="text-zinc-400 max-w-md text-base">
@@ -113,7 +113,7 @@ export default function Services() {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
               data-testid={`service-card-${idx}`}
-              className={`group relative overflow-hidden border border-zinc-800 bg-zinc-900 hover:border-orange-500 transition-colors duration-300 min-h-[320px] flex flex-col ${s.span}`}
+              className={`group relative overflow-hidden border border-zinc-800 bg-zinc-900 hover:border-red-500 transition-colors duration-300 min-h-[320px] flex flex-col ${s.span}`}
             >
               <div className="absolute inset-0">
                 <img
@@ -126,10 +126,10 @@ export default function Services() {
 
               <div className="relative z-10 flex flex-col h-full p-7 lg:p-8">
                 <div className="flex items-start justify-between">
-                  <div className="h-12 w-12 grid place-items-center border border-orange-500/40 bg-orange-500/10 text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                  <div className="h-12 w-12 grid place-items-center border border-red-500/40 bg-red-500/10 text-red-500 group-hover:bg-red-500 group-hover:text-white transition-colors">
                     <s.icon className="h-6 w-6" />
                   </div>
-                  <ArrowUpRight className="h-5 w-5 text-zinc-600 group-hover:text-orange-500 group-hover:rotate-45 transition-all duration-300" />
+                  <ArrowUpRight className="h-5 w-5 text-zinc-600 group-hover:text-red-500 group-hover:rotate-45 transition-all duration-300" />
                 </div>
 
                 <h3 className="mt-6 font-display uppercase tracking-tight font-bold text-2xl sm:text-3xl text-white leading-tight">
@@ -145,7 +145,7 @@ export default function Services() {
                       key={item}
                       className="text-xs sm:text-sm text-zinc-400 flex items-start gap-2"
                     >
-                      <span className="mt-1.5 h-1 w-1 bg-orange-500 flex-shrink-0" />
+                      <span className="mt-1.5 h-1 w-1 bg-red-500 flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}

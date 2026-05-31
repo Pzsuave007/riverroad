@@ -11,7 +11,7 @@ export default function ProtectedRoute({ children }) {
         data-testid="auth-checking"
         className="min-h-screen flex items-center justify-center bg-zinc-950 text-zinc-300"
       >
-        <Loader2 className="animate-spin mr-3 text-orange-500" />
+        <Loader2 className="animate-spin mr-3 text-red-500" />
         <span className="font-display uppercase tracking-wider">
           Verifying credentials
         </span>

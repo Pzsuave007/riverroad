@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Flame } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { COMPANY } from "@/lib/constants";
+
+const LOGO_SRC = "/brand/river-road-logo.jpeg";
 
 const NAV_LINKS = [
   { label: "Services", href: "#services" },
@@ -38,16 +40,13 @@ export default function Navbar() {
           href="#top"
           data-testid="navbar-logo"
           className="flex items-center gap-3 group"
+          aria-label="River Road Custom Metal Fabrication"
         >
-          <span className="h-10 w-10 grid place-items-center bg-orange-600 text-white shadow-[0_0_24px_rgba(234,88,12,0.45)]">
-            <Flame className="h-5 w-5" />
-          </span>
-          <span className="font-display text-lg font-bold uppercase tracking-tight leading-tight">
-            <span className="block text-white">River Road</span>
-            <span className="block text-[10px] text-orange-500 tracking-[0.25em]">
-              METAL FABRICATION
-            </span>
-          </span>
+          <img
+            src={LOGO_SRC}
+            alt="River Road Custom Metal Fabrication"
+            className="h-12 sm:h-14 w-auto object-contain"
+          />
         </a>
 
         <nav className="hidden lg:flex items-center gap-9">
@@ -56,7 +55,7 @@ export default function Navbar() {
               key={l.href}
               href={l.href}
               data-testid={`nav-link-${l.label.toLowerCase()}`}
-              className="text-sm font-semibold uppercase tracking-wider text-zinc-300 hover:text-orange-500 transition-colors"
+              className="text-sm font-semibold uppercase tracking-wider text-zinc-300 hover:text-red-500 transition-colors"
             >
               {l.label}
             </a>
@@ -67,14 +66,14 @@ export default function Navbar() {
           <a
             href={`tel:${COMPANY.phoneTel}`}
             data-testid="navbar-phone"
-            className="text-sm font-semibold tracking-wider text-zinc-300 hover:text-orange-500"
+            className="text-sm font-semibold tracking-wider text-zinc-300 hover:text-red-500"
           >
             {COMPANY.phone}
           </a>
           <Button
             asChild
             data-testid="navbar-quote-btn"
-            className="rounded-none bg-orange-600 hover:bg-orange-500 text-white uppercase font-bold tracking-wider px-5"
+            className="rounded-none bg-red-600 hover:bg-red-500 text-white uppercase font-bold tracking-wider px-5"
           >
             <a href="#quote">Get Quote</a>
           </Button>
@@ -101,7 +100,7 @@ export default function Navbar() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="text-base font-semibold uppercase tracking-wider text-zinc-200 hover:text-orange-500"
+                className="text-base font-semibold uppercase tracking-wider text-zinc-200 hover:text-red-500"
               >
                 {l.label}
               </a>
@@ -109,7 +108,7 @@ export default function Navbar() {
             <Button
               asChild
               data-testid="mobile-quote-btn"
-              className="rounded-none bg-orange-600 hover:bg-orange-500 text-white uppercase font-bold tracking-wider"
+              className="rounded-none bg-red-600 hover:bg-red-500 text-white uppercase font-bold tracking-wider"
             >
               <a href="#quote" onClick={() => setOpen(false)}>
                 Get Quote
@@ -117,7 +116,7 @@ export default function Navbar() {
             </Button>
             <Link
               to="/admin/login"
-              className="text-xs text-zinc-500 hover:text-orange-500 tracking-wider uppercase mt-2"
+              className="text-xs text-zinc-500 hover:text-red-500 tracking-wider uppercase mt-2"
             >
               Admin Login
             </Link>

@@ -33,10 +33,10 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="flex items-center gap-3 mb-6"
         >
-          <span className="h-px w-12 bg-orange-500" />
+          <span className="h-px w-12 bg-red-500" />
           <span
             data-testid="hero-eyebrow"
-            className="text-xs sm:text-sm uppercase tracking-[0.35em] text-orange-500 font-bold"
+            className="text-xs sm:text-sm uppercase tracking-[0.35em] text-red-500 font-bold"
           >
             Oregon • Woman-Owned • Since Day One
           </span>
@@ -53,7 +53,7 @@ export default function Hero() {
           <br />
           Built Local.
           <br />
-          <span className="text-orange-500 spark-glow">Built Right.</span>
+          <span className="text-red-500 spark-glow">Built Right.</span>
         </motion.h1>
 
         <motion.p
@@ -77,7 +77,7 @@ export default function Hero() {
             asChild
             size="lg"
             data-testid="hero-quote-btn"
-            className="rounded-none h-14 px-8 bg-orange-600 hover:bg-orange-500 text-white uppercase font-bold tracking-widest text-base shadow-[0_0_32px_rgba(234,88,12,0.4)]"
+            className="rounded-none h-14 px-8 bg-red-600 hover:bg-red-500 text-white uppercase font-bold tracking-widest text-base shadow-[0_0_32px_rgba(220,38,38,0.4)]"
           >
             <a href="#quote">
               Request a Quote
@@ -89,7 +89,7 @@ export default function Hero() {
             size="lg"
             variant="outline"
             data-testid="hero-services-btn"
-            className="rounded-none h-14 px-8 border-zinc-600 hover:border-orange-500 bg-transparent text-white uppercase font-bold tracking-widest text-base hover:bg-zinc-900 hover:text-white"
+            className="rounded-none h-14 px-8 border-zinc-600 hover:border-red-500 bg-transparent text-white uppercase font-bold tracking-widest text-base hover:bg-zinc-900 hover:text-white"
           >
             <a href="#services">Explore Services</a>
           </Button>
@@ -111,7 +111,7 @@ export default function Hero() {
               data-testid={`hero-badge-${label.toLowerCase().replace(/\s+/g, "-")}`}
               className="bg-zinc-950/85 backdrop-blur-sm p-5 flex items-center gap-4"
             >
-              <Icon className="h-7 w-7 text-orange-500 flex-shrink-0" />
+              <Icon className="h-7 w-7 text-red-500 flex-shrink-0" />
               <div>
                 <div className="text-white font-bold uppercase tracking-wider text-sm">
                   {label}

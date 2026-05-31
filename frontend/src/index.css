@@ -21,32 +21,32 @@ body {
 }
 
 ::selection {
-    background: #ea580c;
+    background: #dc2626;
     color: #ffffff;
 }
 
 @layer base {
     :root {
-        /* Dark forge palette — shadcn variables */
+        /* Dark forge palette — shadcn variables (River Road brand red) */
         --background: 240 6% 6%;
         --foreground: 0 0% 98%;
         --card: 240 5% 9%;
         --card-foreground: 0 0% 98%;
         --popover: 240 6% 6%;
         --popover-foreground: 0 0% 98%;
-        --primary: 22 95% 48%;
+        --primary: 0 72% 51%;
         --primary-foreground: 0 0% 100%;
         --secondary: 240 4% 16%;
         --secondary-foreground: 0 0% 98%;
         --muted: 240 4% 12%;
         --muted-foreground: 240 5% 64%;
-        --accent: 22 95% 48%;
+        --accent: 0 72% 51%;
         --accent-foreground: 0 0% 100%;
         --destructive: 0 72% 50%;
         --destructive-foreground: 0 0% 98%;
         --border: 240 4% 24%;
         --input: 240 4% 18%;
-        --ring: 22 95% 48%;
+        --ring: 0 72% 51%;
         --radius: 0.25rem;
     }
 }
@@ -69,8 +69,8 @@ body {
 /* Spark / glow utility */
 .spark-glow {
     text-shadow:
-        0 0 24px rgba(234, 88, 12, 0.45),
-        0 0 4px rgba(234, 88, 12, 0.65);
+        0 0 24px rgba(220, 38, 38, 0.45),
+        0 0 4px rgba(220, 38, 38, 0.65);
 }
 
 /* Etched diagonal stripe background */
@@ -102,8 +102,8 @@ body {
 .border-stripe {
     background-image: repeating-linear-gradient(
         45deg,
-        #ea580c 0,
-        #ea580c 12px,
+        #dc2626 0,
+        #dc2626 12px,
         #09090b 12px,
         #09090b 24px
     );
@@ -127,7 +127,7 @@ html {
     border-radius: 0;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #ea580c;
+    background: #dc2626;
 }
 
 /* Image hover desat for gallery */

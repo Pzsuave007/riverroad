@@ -9,10 +9,11 @@ import {
   Mail,
   Phone,
   Building2,
-  Flame,
   ArrowLeft,
   Filter,
 } from "lucide-react";
+
+const LOGO_SRC = "/brand/river-road-logo.jpeg";
 
 import api, { formatApiErrorDetail } from "@/lib/api";
 import { STATUS_LABELS } from "@/lib/constants";
@@ -38,7 +39,7 @@ import {
 const STATUSES = ["new", "in_review", "contacted", "closed"];
 
 const STATUS_STYLES = {
-  new: "bg-orange-500/15 text-orange-400 border-orange-500/40",
+  new: "bg-red-500/15 text-red-400 border-red-500/40",
   in_review: "bg-yellow-500/15 text-yellow-400 border-yellow-500/40",
   contacted: "bg-sky-500/15 text-sky-400 border-sky-500/40",
   closed: "bg-zinc-700/40 text-zinc-300 border-zinc-600",
@@ -119,7 +120,7 @@ export default function AdminDashboard() {
   const statCards = useMemo(
     () => [
       { key: "total", label: "Total Quotes", accent: "text-white" },
-      { key: "new", label: "New", accent: "text-orange-500" },
+      { key: "new", label: "New", accent: "text-red-500" },
       { key: "in_review", label: "In Review", accent: "text-yellow-400" },
       { key: "contacted", label: "Contacted", accent: "text-sky-400" },
       { key: "closed", label: "Closed", accent: "text-zinc-400" },
@@ -136,15 +137,14 @@ export default function AdminDashboard() {
       <header className="border-b border-zinc-800 bg-zinc-950/95 backdrop-blur-md sticky top-0 z-30">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 h-16 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <span className="h-9 w-9 grid place-items-center bg-orange-600 text-white">
-              <Flame className="h-4 w-4" />
-            </span>
-            <div className="hidden sm:block">
-              <div className="font-display uppercase tracking-tight font-bold text-base leading-tight">
+            <img
+              src={LOGO_SRC}
+              alt="River Road Custom Metal Fabrication"
+              className="h-10 w-auto object-contain"
+            />
+            <div className="hidden sm:block border-l border-zinc-800 pl-4">
+              <div className="text-[10px] tracking-[0.3em] text-red-500 font-bold uppercase">
                 Admin Console
-              </div>
-              <div className="text-[10px] tracking-[0.3em] text-orange-500 font-bold uppercase">
-                River Road Metal
               </div>
             </div>
           </div>
@@ -152,7 +152,7 @@ export default function AdminDashboard() {
             <Link
               to="/"
               data-testid="admin-back-to-site"
-              className="hidden sm:inline-flex items-center gap-2 text-xs uppercase tracking-wider text-zinc-400 hover:text-orange-500 font-bold"
+              className="hidden sm:inline-flex items-center gap-2 text-xs uppercase tracking-wider text-zinc-400 hover:text-red-500 font-bold"
             >
               <ArrowLeft className="h-4 w-4" /> View Site
             </Link>
@@ -164,7 +164,7 @@ export default function AdminDashboard() {
               data-testid="admin-logout-btn"
               variant="outline"
               size="sm"
-              className="rounded-none border-zinc-700 bg-transparent hover:bg-zinc-900 hover:text-orange-500 uppercase tracking-wider text-xs font-bold"
+              className="rounded-none border-zinc-700 bg-transparent hover:bg-zinc-900 hover:text-red-500 uppercase tracking-wider text-xs font-bold"
             >
               <LogOut className="h-4 w-4 mr-1.5" /> Logout
             </Button>
@@ -176,8 +176,8 @@ export default function AdminDashboard() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
           <div>
             <div className="flex items-center gap-3 mb-2">
-              <span className="h-px w-10 bg-orange-500" />
-              <span className="text-xs uppercase tracking-[0.35em] text-orange-500 font-bold">
+              <span className="h-px w-10 bg-red-500" />
+              <span className="text-xs uppercase tracking-[0.35em] text-red-500 font-bold">
                 Dashboard
               </span>
             </div>
@@ -189,7 +189,7 @@ export default function AdminDashboard() {
             onClick={load}
             data-testid="admin-refresh-btn"
             variant="outline"
-            className="rounded-none border-zinc-700 bg-transparent hover:bg-zinc-900 hover:text-orange-500 uppercase tracking-wider text-xs font-bold"
+            className="rounded-none border-zinc-700 bg-transparent hover:bg-zinc-900 hover:text-red-500 uppercase tracking-wider text-xs font-bold"
           >
             <RefreshCw className="h-4 w-4 mr-2" /> Refresh
           </Button>
@@ -224,7 +224,7 @@ export default function AdminDashboard() {
           <Select value={filter} onValueChange={setFilter}>
             <SelectTrigger
               data-testid="admin-filter-select"
-              className="w-[200px] bg-zinc-950 border-zinc-700 rounded-none h-10 text-white focus:ring-orange-500"
+              className="w-[200px] bg-zinc-950 border-zinc-700 rounded-none h-10 text-white focus:ring-red-500"
             >
               <SelectValue />
             </SelectTrigger>
@@ -246,7 +246,7 @@ export default function AdminDashboard() {
         >
           {loading ? (
             <div className="p-12 flex items-center justify-center text-zinc-400">
-              <Loader2 className="h-5 w-5 animate-spin mr-3 text-orange-500" />
+              <Loader2 className="h-5 w-5 animate-spin mr-3 text-red-500" />
               Loading quotes…
             </div>
           ) : quotes.length === 0 ? (
@@ -329,7 +329,7 @@ export default function AdminDashboard() {
                             variant="outline"
                             data-testid={`quote-view-${q.id}`}
                             onClick={() => setSelected(q)}
-                            className="rounded-none border-zinc-700 bg-transparent hover:bg-zinc-800 hover:text-orange-500 text-xs uppercase tracking-wider font-bold"
+                            className="rounded-none border-zinc-700 bg-transparent hover:bg-zinc-800 hover:text-red-500 text-xs uppercase tracking-wider font-bold"
                           >
                             View
                           </Button>
@@ -392,7 +392,7 @@ export default function AdminDashboard() {
                     value={
                       <a
                         href={`mailto:${selected.email}`}
-                        className="hover:text-orange-500 break-all"
+                        className="hover:text-red-500 break-all"
                       >
                         {selected.email}
                       </a>
@@ -404,7 +404,7 @@ export default function AdminDashboard() {
                     value={
                       <a
                         href={`tel:${selected.phone}`}
-                        className="hover:text-orange-500"
+                        className="hover:text-red-500"
                       >
                         {selected.phone}
                       </a>

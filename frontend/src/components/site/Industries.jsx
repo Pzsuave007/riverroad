@@ -28,8 +28,8 @@ export default function Industries() {
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <span className="h-px w-10 bg-orange-500" />
-              <span className="text-xs uppercase tracking-[0.35em] text-orange-500 font-bold">
+              <span className="h-px w-10 bg-red-500" />
+              <span className="text-xs uppercase tracking-[0.35em] text-red-500 font-bold">
                 Industries We Serve
               </span>
             </div>
@@ -54,10 +54,10 @@ export default function Industries() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
               data-testid={`industry-${idx}`}
-              className="bg-zinc-950 p-7 flex flex-col items-center text-center gap-3 hover:bg-zinc-900 hover:text-orange-500 group transition-colors"
+              className="bg-zinc-950 p-7 flex flex-col items-center text-center gap-3 hover:bg-zinc-900 hover:text-red-500 group transition-colors"
             >
-              <ind.icon className="h-9 w-9 text-zinc-400 group-hover:text-orange-500 transition-colors" />
-              <span className="text-sm font-bold uppercase tracking-wider text-zinc-200 group-hover:text-orange-500 transition-colors">
+              <ind.icon className="h-9 w-9 text-zinc-400 group-hover:text-red-500 transition-colors" />
+              <span className="text-sm font-bold uppercase tracking-wider text-zinc-200 group-hover:text-red-500 transition-colors">
                 {ind.label}
               </span>
             </motion.div>

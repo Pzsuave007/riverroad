@@ -8,7 +8,7 @@ export default function NotFound() {
       className="min-h-screen flex items-center justify-center bg-zinc-950 text-white px-6"
     >
       <div className="text-center max-w-md">
-        <div className="font-display uppercase tracking-tighter text-7xl text-orange-500 spark-glow">
+        <div className="font-display uppercase tracking-tighter text-7xl text-red-500 spark-glow">
           404
         </div>
         <h1 className="mt-4 font-display uppercase tracking-tight text-3xl">
@@ -19,7 +19,7 @@ export default function NotFound() {
         </p>
         <Button
           asChild
-          className="mt-8 rounded-none bg-orange-600 hover:bg-orange-500 uppercase font-bold tracking-widest"
+          className="mt-8 rounded-none bg-red-600 hover:bg-red-500 uppercase font-bold tracking-widest"
         >
           <Link to="/" data-testid="notfound-home-link">
             Back to Home
