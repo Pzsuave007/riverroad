@@ -3,7 +3,7 @@ import { ArrowRight, ShieldCheck, MapPin, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HERO_IMG =
-  "https://static.prod-images.emergentagent.com/jobs/86e3e890-7adc-43ca-88f7-d37f1326eb56/images/6c0680c529546ad54743c4d9380c13ca41f4564ec4636c7ec85a56f9345d8f57.png";
+  "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=2000&q=80";
 
 export default function Hero() {
   return (

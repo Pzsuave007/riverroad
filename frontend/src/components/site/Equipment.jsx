@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 
 const EQUIPMENT_BG =
-  "https://static.prod-images.emergentagent.com/jobs/86e3e890-7adc-43ca-88f7-d37f1326eb56/images/27e4cf0124ef9291f7319601a7346b63a997668cc1b540bb671454bc2470a54c.png";
+  "https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?auto=format&fit=crop&w=2000&q=80";
 
 const GROUPS = [
   {
