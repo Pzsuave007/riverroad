@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { Loader2, ArrowLeft } from "lucide-react";
 
-const LOGO_SRC = "/brand/river-road-logo.jpeg";
+const LOGO_SRC = "/brand/river-road-logo.png";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";

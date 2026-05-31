@@ -13,7 +13,7 @@ import {
   Filter,
 } from "lucide-react";
 
-const LOGO_SRC = "/brand/river-road-logo.jpeg";
+const LOGO_SRC = "/brand/river-road-logo.png";
 
 import api, { formatApiErrorDetail } from "@/lib/api";
 import { STATUS_LABELS } from "@/lib/constants";

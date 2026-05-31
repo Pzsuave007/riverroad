@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { COMPANY } from "@/lib/constants";
 
-const LOGO_SRC = "/brand/river-road-logo.jpeg";
+const LOGO_SRC = "/brand/river-road-logo.png";
 
 const NAV_LINKS = [
   { label: "Services", href: "#services" },

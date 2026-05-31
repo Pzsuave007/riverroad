@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { COMPANY } from "@/lib/constants";
 
-const LOGO_SRC = "/brand/river-road-logo.jpeg";
+const LOGO_SRC = "/brand/river-road-logo.png";
 
 export default function Footer() {
   return (
