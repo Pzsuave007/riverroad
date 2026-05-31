@@ -1,0 +1,153 @@
+{
+  "theme": "DARK",
+  "archetype": "2 (Performance Pro) modified for Industrial Ruggedness",
+  "design_philosophy": {
+    "core_principles": [
+      "Rugged and authoritative - visual language must convey 'Built Strong. Built Local. Built Right.'",
+      "High contrast over subtlety - dark heavy backgrounds contrasting with striking, fiery accent colors (representing sparks/heat).",
+      "Industrial scale spacing - generous padding and bold borders that mirror heavy steel construction.",
+      "Clear, actionable hierarchy for getting quotes and navigating services."
+    ],
+    "mood": "Professional, heavy-duty, reliable, industrial, spark-lit",
+    "target_audience": "Contractors, construction firms, aggregate and mining sites, industrial companies."
+  },
+  "colors": {
+    "background": {
+      "main": "#09090B",
+      "description": "Deep obsidian / Forge Black. Never pure black, slightly tinted with cool steel."
+    },
+    "surface": {
+      "primary": "#18181B",
+      "secondary": "#27272A",
+      "description": "Zinc scales for cards and containers representing brushed dark steel."
+    },
+    "accent": {
+      "primary": "#EA580C",
+      "primary_hover": "#F97316",
+      "secondary": "#EAB308",
+      "description": "Flame/Spark Orange for primary CTAs and Yellow for warning/safety indicators."
+    },
+    "text": {
+      "primary": "#FAFAFA",
+      "secondary": "#A1A1AA",
+      "accent": "#EA580C"
+    },
+    "borders": {
+      "default": "#3F3F46",
+      "focus": "#EA580C"
+    }
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Clash Display, sans-serif",
+      "weights": ["600", "700"],
+      "styling": "Uppercase for H1 and overlines, very tight tracking (tracking-tighter) for industrial weight.",
+      "sizes": {
+        "h1": "text-5xl sm:text-6xl lg:text-7xl",
+        "h2": "text-4xl sm:text-5xl",
+        "h3": "text-2xl sm:text-3xl"
+      }
+    },
+    "body": {
+      "font_family": "Manrope, sans-serif",
+      "weights": ["400", "500"],
+      "styling": "Clean, geometric sans for maximum legibility in technical specifications and dense dashboard areas.",
+      "sizes": {
+        "default": "text-base",
+        "small": "text-sm",
+        "large": "text-lg"
+      }
+    }
+  },
+  "spacing_and_layout": {
+    "generous_spacing": "Use p-8 to p-12 for content sections, py-20 to py-32 for major page sections.",
+    "bento_grids": "Use Mode A 'Tetris Grid' for the Services and Equipment Sales sections to create dynamic asymmetry. Never perfect uniform boxes.",
+    "borders": "Expose the skeleton. Use solid 1px or 2px borders (border-zinc-700) on cards to simulate welded panels.",
+    "hero_overlay": "Use bg-black/60 to ensure the stark white and spark orange text pops perfectly against industrial backgrounds."
+  },
+  "surface_strategies": {
+    "marketing_pages": "Use 'Grid Borders' look. Dark surfaces, sharp 0px or 4px rounded corners (never pill-shaped unless for badges).",
+    "dashboard": "Use 'Technical Grid'. Clean lines, border-collapse styles, high density data, dark steel aesthetics.",
+    "glassmorphism": "Avoid soft glassmorphism. Use solid, opaque dark materials for dropdowns and modals to maintain the rugged feel."
+  },
+  "components": {
+    "buttons": "Square or very slightly rounded (rounded-sm). Primary buttons MUST be Spark Orange (bg-orange-600 hover:bg-orange-500 text-white) with bold uppercase text.",
+    "cards": "Dark zinc background (bg-zinc-900), subtle border (border-zinc-800), and a harsh shadow or no shadow. On hover, translate up and border turns orange.",
+    "inputs": "Shadcn standard but customized to dark mode: bg-zinc-950 border-zinc-700 focus:ring-orange-500 focus:border-orange-500 text-white.",
+    "navigation": "Sticky, solid background (bg-zinc-950/90 backdrop-blur-md), bottom border (border-zinc-800). Nav links bold and uppercase.",
+    "icons": "Use lucide-react. Prefer industrial icons: Hammer, Wrench, HardHat, Flame, Tractor, Settings, ShieldCheck."
+  },
+  "motion_and_interactions": {
+    "hover_states": "Harsh, immediate color swaps. No slow easing. Buttons should feel snappy and mechanical.",
+    "scroll_animations": "Use framer-motion for simple 'fade in and slide up' on major sections as user scrolls.",
+    "loading": "Fast, high-contrast spinners or linear progress bars in accent orange."
+  },
+  "media": {
+    "image_style": "High contrast, dramatic lighting, gritty industrial feel. Use grayscale filters on hover states for dynamic effects.",
+    "image_urls": [
+      {
+        "category": "hero",
+        "url": "https://static.prod-images.emergentagent.com/jobs/86e3e890-7adc-43ca-88f7-d37f1326eb56/images/6c0680c529546ad54743c4d9380c13ca41f4564ec4636c7ec85a56f9345d8f57.png",
+        "description": "Cinematic industrial metal fabrication shop with sparks flying. Primary hero background."
+      },
+      {
+        "category": "background_texture",
+        "url": "https://static.prod-images.emergentagent.com/jobs/86e3e890-7adc-43ca-88f7-d37f1326eb56/images/27e4cf0124ef9291f7319601a7346b63a997668cc1b540bb671454bc2470a54c.png",
+        "description": "Abstract dark brushed steel texture. Use for footer or CTA section backgrounds."
+      },
+      {
+        "category": "about_us",
+        "url": "https://images.pexels.com/photos/6036672/pexels-photo-6036672.jpeg",
+        "description": "Woman welder working with sparks flying. Use for 'Woman-owned business' About Us section."
+      },
+      {
+        "category": "about_us_alternate",
+        "url": "https://images.pexels.com/photos/30768949/pexels-photo-30768949.jpeg",
+        "description": "Female welder in protective gear."
+      },
+      {
+        "category": "service_welding",
+        "url": "https://images.pexels.com/photos/37517094/pexels-photo-37517094.jpeg",
+        "description": "Close-up of bright sparks and welding process."
+      },
+      {
+        "category": "service_fabrication",
+        "url": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1",
+        "description": "Man using welding machine on large metal."
+      },
+      {
+        "category": "service_equipment",
+        "url": "https://images.pexels.com/photos/15071423/pexels-photo-15071423.jpeg",
+        "description": "Yellow excavator in rocky quarry. Use for heavy equipment repair/rebuild service."
+      },
+      {
+        "category": "equipment_sales",
+        "url": "https://images.pexels.com/photos/14484423/pexels-photo-14484423.jpeg",
+        "description": "Heavy-duty bulldozers parked at construction site."
+      },
+      {
+        "category": "industries_mining",
+        "url": "https://images.unsplash.com/photo-1523848309072-c199db53f137",
+        "description": "Excavators at mining area."
+      },
+      {
+        "category": "industries_construction",
+        "url": "https://images.unsplash.com/photo-1517089596392-fb9a9033e05b",
+        "description": "Heavy equipment on quarry top view."
+      }
+    ]
+  },
+  "testing": {
+    "requirements": "All interactive elements, buttons, nav links, forms, and admin features must have descriptive data-testid attributes (e.g., data-testid='hero-quote-button')."
+  },
+  "instructions_to_main_agent": [
+    "Install `lucide-react` for icons.",
+    "Install `framer-motion` for page transitions.",
+    "Implement the 'Request a Quote' form using Shadcn Input, Textarea, and Select components (customized to dark mode).",
+    "Build an Admin Dashboard route (e.g., `/admin`) with a login screen and a table (Shadcn Table) listing quote requests.",
+    "Use custom Google Fonts (Clash Display for headings, Manrope for body) in your global CSS.",
+    "Construct the Services and Equipment sections using CSS Grid to create a 'bento box' layout, not just standard columns.",
+    "Ensure the Hero section has a dark gradient overlay so text remains perfectly legible against the sparks.",
+    "The footer should be heavily styled as 'industrial dark', using the dark_metal_texture if possible, with clear contact info."
+  ]
+}
