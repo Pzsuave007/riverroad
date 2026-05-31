@@ -47,7 +47,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           data-testid="hero-headline"
-          className="font-display uppercase font-bold leading-[0.95] tracking-tighter text-white text-5xl sm:text-6xl lg:text-7xl xl:text-8xl max-w-5xl"
+          className="font-display uppercase font-bold leading-[0.95] tracking-tight text-white text-[2.5rem] sm:text-6xl lg:text-7xl xl:text-8xl max-w-5xl"
         >
           Built Strong.
           <br />

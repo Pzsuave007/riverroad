@@ -8,7 +8,7 @@ export default function NotFound() {
       className="min-h-screen flex items-center justify-center bg-zinc-950 text-white px-6"
     >
       <div className="text-center max-w-md">
-        <div className="font-display uppercase tracking-tighter text-7xl text-red-500 spark-glow">
+        <div className="font-display uppercase tracking-tight text-7xl text-red-500 spark-glow">
           404
         </div>
         <h1 className="mt-4 font-display uppercase tracking-tight text-3xl">

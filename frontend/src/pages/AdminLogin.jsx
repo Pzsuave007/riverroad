@@ -66,7 +66,7 @@ export default function AdminLogin() {
             Admin Console
           </div>
 
-          <h1 className="font-display uppercase tracking-tighter font-bold text-3xl text-white mb-2">
+          <h1 className="font-display uppercase tracking-tight font-bold text-3xl text-white mb-2">
             Sign In
           </h1>
           <p className="text-sm text-zinc-400 mb-8">

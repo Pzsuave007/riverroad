@@ -37,7 +37,7 @@ export default function About() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6 border-t border-red-500/40 bg-zinc-950/80 backdrop-blur-sm">
-              <div className="font-display uppercase tracking-tighter text-3xl text-white">
+              <div className="font-display uppercase tracking-tight text-3xl text-white">
                 Built by a<br />
                 <span className="text-red-500">Woman.</span> Engineered for Work.
               </div>
@@ -63,7 +63,7 @@ export default function About() {
 
           <h2
             data-testid="about-heading"
-            className="font-display uppercase tracking-tighter font-bold text-4xl sm:text-5xl text-white leading-[1.05]"
+            className="font-display uppercase font-bold tracking-tight text-3xl sm:text-5xl lg:text-6xl text-white leading-[1.05]"
           >
             A Woman-Owned Oregon
             <br />

@@ -88,7 +88,7 @@ export default function Services() {
             </div>
             <h2
               data-testid="services-heading"
-              className="font-display uppercase font-bold tracking-tighter text-4xl sm:text-5xl lg:text-6xl text-white leading-[0.95]"
+              className="font-display uppercase font-bold tracking-tight text-3xl sm:text-5xl lg:text-6xl text-white leading-[0.95]"
             >
               Services Engineered
               <br />

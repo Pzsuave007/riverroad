@@ -181,7 +181,7 @@ export default function AdminDashboard() {
                 Dashboard
               </span>
             </div>
-            <h1 className="font-display uppercase tracking-tighter font-bold text-3xl lg:text-4xl">
+            <h1 className="font-display uppercase tracking-tight font-bold text-3xl lg:text-4xl">
               Quote Requests
             </h1>
           </div>

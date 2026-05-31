@@ -35,7 +35,7 @@ export default function Industries() {
             </div>
             <h2
               data-testid="industries-heading"
-              className="font-display uppercase font-bold tracking-tighter text-3xl sm:text-4xl lg:text-5xl text-white leading-tight"
+              className="font-display uppercase font-bold tracking-tight text-2xl sm:text-4xl lg:text-5xl text-white leading-tight"
             >
               When quality, durability & reliability matter — River Road delivers.
             </h2>

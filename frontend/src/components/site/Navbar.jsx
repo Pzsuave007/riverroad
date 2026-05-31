@@ -45,7 +45,7 @@ export default function Navbar() {
           <img
             src={LOGO_SRC}
             alt="River Road Custom Metal Fabrication"
-            className="h-12 sm:h-14 w-auto object-contain"
+            className="h-9 sm:h-11 lg:h-12 w-auto object-contain"
           />
         </a>
 

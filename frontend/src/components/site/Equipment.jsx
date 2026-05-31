@@ -107,7 +107,7 @@ export default function Equipment() {
           </div>
           <h2
             data-testid="equipment-heading"
-            className="font-display uppercase font-bold tracking-tighter text-4xl sm:text-5xl lg:text-6xl text-white leading-[0.95]"
+            className="font-display uppercase font-bold tracking-tight text-3xl sm:text-5xl lg:text-6xl text-white leading-[0.95]"
           >
             Aggregate, Concrete &{" "}
             <span className="text-red-500">Crushing Equipment.</span>

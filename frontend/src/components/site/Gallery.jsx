@@ -52,7 +52,7 @@ export default function Gallery() {
             </div>
             <h2
               data-testid="gallery-heading"
-              className="font-display uppercase font-bold tracking-tighter text-4xl sm:text-5xl lg:text-6xl text-white leading-[0.95]"
+              className="font-display uppercase font-bold tracking-tight text-3xl sm:text-5xl lg:text-6xl text-white leading-[0.95]"
             >
               See Our Work <span className="text-red-500">in Action.</span>
             </h2>

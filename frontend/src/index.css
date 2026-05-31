@@ -63,7 +63,7 @@ body {
 /* Industrial display font for headings */
 .font-display {
     font-family: "Clash Display", "Manrope", sans-serif;
-    letter-spacing: -0.02em;
+    word-spacing: 0.08em;
 }
 
 /* Spark / glow utility */
