@@ -63,45 +63,45 @@ export default function QuoteForm() {
     <section
       id="quote"
       data-testid="quote-section"
-      className="relative py-24 lg:py-32 bg-zinc-950 border-t border-zinc-900"
+      className="relative py-24 lg:py-32 bg-zinc-100 border-t border-zinc-200"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
         {/* Left — contact info */}
         <aside className="lg:col-span-5 space-y-10">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <span className="h-px w-10 bg-red-500" />
-              <span className="text-xs uppercase tracking-[0.35em] text-red-500 font-bold">
+              <span className="h-px w-10 bg-red-600" />
+              <span className="text-xs uppercase tracking-[0.35em] text-red-600 font-bold">
                 Request a Quote
               </span>
             </div>
             <h2
               data-testid="quote-heading"
-              className="font-display uppercase font-bold tracking-tight text-3xl sm:text-5xl lg:text-6xl text-white leading-[0.95]"
+              className="font-display uppercase font-bold tracking-tight text-3xl sm:text-5xl lg:text-6xl text-zinc-900 leading-[0.95]"
             >
               Let's Discuss <br />
-              <span className="text-red-500">Your Project.</span>
+              <span className="text-red-600">Your Project.</span>
             </h2>
-            <p className="mt-5 text-zinc-300 max-w-md">
+            <p className="mt-5 text-zinc-600 max-w-md">
               Fabrication, welding, repairs, equipment rentals, or specialized
               aggregate solutions — tell us what you need and we'll get back to
               you fast.
             </p>
           </div>
 
-          <ul className="space-y-5 border-l-2 border-red-500/60 pl-6">
+          <ul className="space-y-5 border-l-2 border-red-600 pl-6">
             <li className="flex items-start gap-4">
-              <MapPin className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <MapPin className="h-5 w-5 text-red-600 mt-0.5 flex-shrink-0" />
               <div>
                 <div className="text-xs uppercase tracking-[0.25em] text-zinc-500 font-bold mb-1">
                   Shop Location
                 </div>
-                <div className="text-white text-base">{COMPANY.street}</div>
-                <div className="text-zinc-400 text-base">{COMPANY.city}</div>
+                <div className="text-zinc-900 text-base font-semibold">{COMPANY.street}</div>
+                <div className="text-zinc-600 text-base">{COMPANY.city}</div>
               </div>
             </li>
             <li className="flex items-start gap-4">
-              <Phone className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <Phone className="h-5 w-5 text-red-600 mt-0.5 flex-shrink-0" />
               <div>
                 <div className="text-xs uppercase tracking-[0.25em] text-zinc-500 font-bold mb-1">
                   Phone
@@ -109,14 +109,14 @@ export default function QuoteForm() {
                 <a
                   href={`tel:${COMPANY.phoneTel}`}
                   data-testid="quote-phone-link"
-                  className="text-white text-lg font-bold hover:text-red-500 transition-colors"
+                  className="text-zinc-900 text-lg font-bold hover:text-red-600 transition-colors"
                 >
                   {COMPANY.phone}
                 </a>
               </div>
             </li>
             <li className="flex items-start gap-4">
-              <Mail className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <Mail className="h-5 w-5 text-red-600 mt-0.5 flex-shrink-0" />
               <div>
                 <div className="text-xs uppercase tracking-[0.25em] text-zinc-500 font-bold mb-1">
                   Email
@@ -124,19 +124,19 @@ export default function QuoteForm() {
                 <a
                   href={`mailto:${COMPANY.email}`}
                   data-testid="quote-email-link"
-                  className="text-white hover:text-red-500 transition-colors break-all"
+                  className="text-zinc-900 font-semibold hover:text-red-600 transition-colors break-all"
                 >
                   {COMPANY.email}
                 </a>
               </div>
             </li>
             <li className="flex items-start gap-4">
-              <Clock className="h-5 w-5 text-red-500 mt-0.5 flex-shrink-0" />
+              <Clock className="h-5 w-5 text-red-600 mt-0.5 flex-shrink-0" />
               <div>
                 <div className="text-xs uppercase tracking-[0.25em] text-zinc-500 font-bold mb-1">
                   Hours
                 </div>
-                <div className="text-white">{COMPANY.hours}</div>
+                <div className="text-zinc-900 font-semibold">{COMPANY.hours}</div>
               </div>
             </li>
           </ul>
@@ -146,7 +146,7 @@ export default function QuoteForm() {
         <form
           onSubmit={submit}
           data-testid="quote-form"
-          className="lg:col-span-7 bg-zinc-900/70 border border-zinc-800 p-7 lg:p-10 space-y-6"
+          className="lg:col-span-7 bg-white border border-zinc-200 p-7 lg:p-10 space-y-6 shadow-xl"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <Field label="Full Name *">
@@ -156,7 +156,7 @@ export default function QuoteForm() {
                 value={form.full_name}
                 onChange={update("full_name")}
                 placeholder="Jane Smith"
-                className="bg-zinc-950 border-zinc-700 focus-visible:ring-red-500 focus-visible:border-red-500 text-white rounded-none h-11"
+                className="bg-zinc-50 border-zinc-300 focus-visible:ring-red-500 focus-visible:border-red-500 text-zinc-900 placeholder:text-zinc-400 rounded-none h-11"
               />
             </Field>
             <Field label="Email *">
@@ -167,7 +167,7 @@ export default function QuoteForm() {
                 value={form.email}
                 onChange={update("email")}
                 placeholder="you@company.com"
-                className="bg-zinc-950 border-zinc-700 focus-visible:ring-red-500 focus-visible:border-red-500 text-white rounded-none h-11"
+                className="bg-zinc-50 border-zinc-300 focus-visible:ring-red-500 focus-visible:border-red-500 text-zinc-900 placeholder:text-zinc-400 rounded-none h-11"
               />
             </Field>
             <Field label="Phone *">
@@ -177,7 +177,7 @@ export default function QuoteForm() {
                 value={form.phone}
                 onChange={update("phone")}
                 placeholder="(503) 555-0100"
-                className="bg-zinc-950 border-zinc-700 focus-visible:ring-red-500 focus-visible:border-red-500 text-white rounded-none h-11"
+                className="bg-zinc-50 border-zinc-300 focus-visible:ring-red-500 focus-visible:border-red-500 text-zinc-900 placeholder:text-zinc-400 rounded-none h-11"
               />
             </Field>
             <Field label="Company (optional)">
@@ -186,7 +186,7 @@ export default function QuoteForm() {
                 value={form.company}
                 onChange={update("company")}
                 placeholder="Acme Construction"
-                className="bg-zinc-950 border-zinc-700 focus-visible:ring-red-500 focus-visible:border-red-500 text-white rounded-none h-11"
+                className="bg-zinc-50 border-zinc-300 focus-visible:ring-red-500 focus-visible:border-red-500 text-zinc-900 placeholder:text-zinc-400 rounded-none h-11"
               />
             </Field>
           </div>
@@ -198,16 +198,16 @@ export default function QuoteForm() {
             >
               <SelectTrigger
                 data-testid="quote-select-service"
-                className="bg-zinc-950 border-zinc-700 text-white rounded-none h-11 focus:ring-red-500"
+                className="bg-zinc-50 border-zinc-300 text-zinc-900 rounded-none h-11 focus:ring-red-500"
               >
                 <SelectValue placeholder="Select a service…" />
               </SelectTrigger>
-              <SelectContent className="bg-zinc-950 border-zinc-700 text-white">
+              <SelectContent className="bg-white border-zinc-200 text-zinc-900">
                 {SERVICES.map((s) => (
                   <SelectItem
                     key={s}
                     value={s}
-                    className="focus:bg-red-500/20 focus:text-red-400"
+                    className="focus:bg-red-50 focus:text-red-700"
                   >
                     {s}
                   </SelectItem>
@@ -224,7 +224,7 @@ export default function QuoteForm() {
               value={form.project_details}
               onChange={update("project_details")}
               placeholder="Tell us about your project, equipment needs, or repair requirements…"
-              className="bg-zinc-950 border-zinc-700 focus-visible:ring-red-500 focus-visible:border-red-500 text-white rounded-none"
+              className="bg-zinc-50 border-zinc-300 focus-visible:ring-red-500 focus-visible:border-red-500 text-zinc-900 placeholder:text-zinc-400 rounded-none"
             />
           </Field>
 
@@ -240,11 +240,11 @@ export default function QuoteForm() {
                 <label
                   key={opt}
                   data-testid={`quote-contact-${opt.toLowerCase()}`}
-                  className="flex items-center gap-2 text-zinc-200 cursor-pointer"
+                  className="flex items-center gap-2 text-zinc-800 cursor-pointer"
                 >
                   <RadioGroupItem
                     value={opt}
-                    className="border-zinc-600 text-red-500"
+                    className="border-zinc-400 text-red-600"
                   />
                   <span className="text-sm font-medium">{opt}</span>
                 </label>
@@ -256,7 +256,7 @@ export default function QuoteForm() {
             type="submit"
             disabled={submitting}
             data-testid="quote-submit-btn"
-            className="w-full sm:w-auto rounded-none h-14 px-10 bg-red-600 hover:bg-red-500 text-white uppercase font-bold tracking-widest text-base disabled:opacity-60"
+            className="w-full sm:w-auto rounded-none h-14 px-10 bg-red-600 hover:bg-red-500 text-white uppercase font-bold tracking-widest text-base disabled:opacity-60 shadow-lg shadow-red-600/30"
           >
             {submitting ? (
               <>
@@ -278,7 +278,7 @@ export default function QuoteForm() {
 function Field({ label, children }) {
   return (
     <div className="space-y-2">
-      <Label className="text-xs uppercase tracking-[0.25em] text-zinc-400 font-bold">
+      <Label className="text-xs uppercase tracking-[0.25em] text-zinc-700 font-bold">
         {label}
       </Label>
       {children}

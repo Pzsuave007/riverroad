@@ -22,14 +22,22 @@ export default function Industries() {
     <section
       id="industries"
       data-testid="industries-section"
-      className="relative py-20 lg:py-24 bg-zinc-900 border-y border-zinc-800"
+      className="relative py-20 lg:py-24 bg-red-600 overflow-hidden"
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <div
+        className="absolute inset-0 opacity-[0.08] mix-blend-overlay"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(135deg, #fff 0 1px, transparent 1px 18px)",
+        }}
+        aria-hidden="true"
+      />
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
           <div>
             <div className="flex items-center gap-3 mb-3">
-              <span className="h-px w-10 bg-red-500" />
-              <span className="text-xs uppercase tracking-[0.35em] text-red-500 font-bold">
+              <span className="h-px w-10 bg-white" />
+              <span className="text-xs uppercase tracking-[0.35em] text-white font-bold">
                 Industries We Serve
               </span>
             </div>
@@ -44,7 +52,7 @@ export default function Industries() {
 
         <div
           data-testid="industries-grid"
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-zinc-700/40 border border-zinc-800"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-px bg-white/20 border border-white/30"
         >
           {INDUSTRIES.map((ind, idx) => (
             <motion.div
@@ -54,10 +62,10 @@ export default function Industries() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
               data-testid={`industry-${idx}`}
-              className="bg-zinc-950 p-7 flex flex-col items-center text-center gap-3 hover:bg-zinc-900 hover:text-red-500 group transition-colors"
+              className="bg-red-600 p-7 flex flex-col items-center text-center gap-3 hover:bg-white group transition-colors"
             >
-              <ind.icon className="h-9 w-9 text-zinc-400 group-hover:text-red-500 transition-colors" />
-              <span className="text-sm font-bold uppercase tracking-wider text-zinc-200 group-hover:text-red-500 transition-colors">
+              <ind.icon className="h-9 w-9 text-white group-hover:text-red-600 transition-colors" />
+              <span className="text-sm font-bold uppercase tracking-wider text-white group-hover:text-red-600 transition-colors">
                 {ind.label}
               </span>
             </motion.div>
