@@ -35,7 +35,7 @@ logger = logging.getLogger("riverroad")
 
 # ---------- Auth helpers ----------
 JWT_ALGORITHM = "HS256"
-JWT_EXPIRY_HOURS = 24
+JWT_EXPIRY_HOURS = int(os.environ.get("JWT_EXPIRY_HOURS", "24"))
 
 def get_jwt_secret() -> str:
     return os.environ["JWT_SECRET"]
@@ -284,6 +284,28 @@ async def startup_event():
             {"$set": {"password_hash": hash_password(admin_password)}},
         )
         logger.info(f"Admin password updated: {admin_email}")
+
+    # Super-admin (global operator) — idempotent
+    super_email = os.environ.get("SUPER_ADMIN_EMAIL", "").lower().strip()
+    super_password = os.environ.get("SUPER_ADMIN_PASSWORD", "").strip()
+    if super_email and super_password:
+        s_existing = await db.users.find_one({"email": super_email})
+        if s_existing is None:
+            await db.users.insert_one({
+                "id": str(uuid.uuid4()),
+                "email": super_email,
+                "password_hash": hash_password(super_password),
+                "name": "Super Admin",
+                "role": "super_admin",
+                "created_at": datetime.now(timezone.utc).isoformat(),
+            })
+            logger.info(f"Super admin seeded: {super_email}")
+        elif not verify_password(super_password, s_existing["password_hash"]):
+            await db.users.update_one(
+                {"email": super_email},
+                {"$set": {"password_hash": hash_password(super_password), "role": "super_admin"}},
+            )
+            logger.info(f"Super admin password updated: {super_email}")
 
 
 @app.on_event("shutdown")
