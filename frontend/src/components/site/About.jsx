@@ -4,7 +4,7 @@ import { CheckCircle2 } from "lucide-react";
 const ABOUT_IMG = "https://images.pexels.com/photos/6036672/pexels-photo-6036672.jpeg";
 
 const PILLARS = [
-  "Woman-Owned Business",
+  "Owner On Every Job",
   "Local Oregon Company",
   "Quality Materials & Craftsmanship",
   "Fast Turnaround Times",
@@ -32,14 +32,15 @@ export default function About() {
           <div className="relative aspect-[4/5] overflow-hidden border border-zinc-300 shadow-xl">
             <img
               src={ABOUT_IMG}
-              alt="Woman welder at work"
+              alt="Welder at work"
               className="absolute inset-0 h-full w-full object-cover img-desat"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6 border-t-2 border-red-600 bg-zinc-950/85 backdrop-blur-sm">
               <div className="font-display uppercase tracking-tight text-3xl text-white">
-                Built by a<br />
-                <span className="text-red-500">Woman.</span> Engineered for Work.
+                Built in <span className="text-red-500">Oregon.</span>
+                <br />
+                Engineered for Work.
               </div>
             </div>
           </div>
