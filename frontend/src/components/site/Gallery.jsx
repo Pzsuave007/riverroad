@@ -1,40 +1,45 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Camera } from "lucide-react";
+import { Camera, Play } from "lucide-react";
+
+const VIDEO_ID = "UykcqOFe0zk";
 
 const GALLERY = [
   {
+    src: "/projects/mississippi.png",
+    label: "Golf Cart Paths — Brookhaven, MS",
+    span: "",
+  },
+  {
+    src: "/projects/proper-slump.jpg",
+    label: "Slipform Paver in Action",
+    span: "",
+  },
+  {
+    src: "/projects/trailrider-3.jpg",
+    label: "TRAILrider® Paving",
+    span: "",
+  },
+  {
+    src: "/projects/hogan-dairy.jpg",
+    label: "Dairy Cow Walk Path — Tillamook, OR",
+    span: "",
+  },
+  {
     src: "https://images.pexels.com/photos/37517094/pexels-photo-37517094.jpeg",
     label: "Precision Welding",
-    span: "md:col-span-2 md:row-span-2",
+    span: "",
   },
   {
     src: "https://images.pexels.com/photos/15071423/pexels-photo-15071423.jpeg",
     label: "Heavy Equipment Rebuilds",
     span: "",
   },
-  {
-    src: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1000&q=80",
-    label: "Custom Fabrication",
-    span: "",
-  },
-  {
-    src: "https://images.pexels.com/photos/14484423/pexels-photo-14484423.jpeg",
-    label: "Aggregate Equipment",
-    span: "md:col-span-2",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1523848309072-c199db53f137?auto=format&fit=crop&w=1000&q=80",
-    label: "Mining Operations",
-    span: "",
-  },
-  {
-    src: "https://images.pexels.com/photos/30768949/pexels-photo-30768949.jpeg",
-    label: "On-Site Welding",
-    span: "",
-  },
 ];
 
 export default function Gallery() {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
   return (
     <section
       id="gallery"
@@ -60,13 +65,61 @@ export default function Gallery() {
           <p className="text-zinc-400 max-w-md text-sm flex items-start gap-2">
             <Camera className="h-4 w-4 mt-0.5 text-red-500 flex-shrink-0" />
             Recent fabrication, welding repairs, and aggregate equipment
-            installations. More project photos coming soon.
+            installations.
           </p>
         </div>
 
+        {/* Featured video — wide */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.6 }}
+          data-testid="gallery-video"
+          className="relative aspect-video w-full overflow-hidden border border-zinc-800 mb-4 lg:mb-5 bg-zinc-900 group"
+        >
+          {videoLoaded ? (
+            <iframe
+              src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&rel=0`}
+              title="River Road TRAILrider in action"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className="absolute inset-0 h-full w-full"
+            />
+          ) : (
+            <button
+              type="button"
+              onClick={() => setVideoLoaded(true)}
+              data-testid="gallery-video-play"
+              className="relative h-full w-full overflow-hidden"
+              aria-label="Play video"
+            >
+              <img
+                src={`https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg`}
+                alt="Watch on YouTube"
+                className="absolute inset-0 h-full w-full object-cover img-desat transition-transform duration-500 group-hover:scale-[1.03]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="h-20 w-20 sm:h-24 sm:w-24 grid place-items-center bg-red-600 group-hover:bg-red-500 transition-colors shadow-2xl shadow-red-600/40 rounded-full">
+                  <Play className="h-9 w-9 sm:h-11 sm:w-11 text-white fill-white translate-x-0.5" />
+                </span>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-5 flex items-center justify-between">
+                <span className="text-white text-sm sm:text-base font-bold uppercase tracking-wider">
+                  Watch — TRAILrider® in Action
+                </span>
+                <span className="text-xs uppercase tracking-[0.25em] text-red-400 font-bold">
+                  Play Video
+                </span>
+              </div>
+            </button>
+          )}
+        </motion.div>
+
         <div
           data-testid="gallery-grid"
-          className="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4 auto-rows-[180px] md:auto-rows-[240px]"
+          className="grid grid-cols-2 md:grid-cols-3 gap-3 lg:gap-4 auto-rows-[180px] md:auto-rows-[240px]"
         >
           {GALLERY.map((g, idx) => (
             <motion.figure
@@ -85,10 +138,10 @@ export default function Gallery() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent opacity-90 group-hover:opacity-70 transition-opacity" />
               <figcaption className="absolute bottom-0 left-0 right-0 p-4 flex items-center justify-between">
-                <span className="text-white text-xs sm:text-sm font-bold uppercase tracking-wider">
+                <span className="text-white text-xs sm:text-sm font-bold uppercase tracking-wider pr-2">
                   {g.label}
                 </span>
-                <span className="h-2 w-2 bg-red-500" />
+                <span className="h-2 w-2 bg-red-500 flex-shrink-0" />
               </figcaption>
             </motion.figure>
           ))}

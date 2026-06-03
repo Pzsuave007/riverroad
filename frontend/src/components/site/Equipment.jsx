@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Droplets,
   Cog,
@@ -6,10 +7,29 @@ import {
   Boxes,
   Truck,
   Sparkles,
+  ArrowUpRight,
 } from "lucide-react";
 
 const EQUIPMENT_BG =
   "https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?auto=format&fit=crop&w=2000&q=80";
+
+const FEATURED = {
+  icon: Construction,
+  title: "Slipform Paver",
+  subtitle: "TRAILrider® — In Stock & For Sale",
+  description:
+    "The TRAILrider® slipform paver — 8″ side clearance (narrowest on the market), adjustable widths from 4′ to 12′, depths 2–6 inches. Places 8 cu yd loads in 6 minutes. Pulled by any truck or loader.",
+  image: "/projects/trailrider-3.jpg",
+  badge: "FOR SALE",
+  href: "/trailrider",
+  applications: [
+    "Nature Trails",
+    "Golf Cart Paths",
+    "Bike Lanes",
+    "Sidewalks",
+    "Single-Lane Driveways",
+  ],
+};
 
 const GROUPS = [
   {
@@ -33,18 +53,6 @@ const GROUPS = [
       "Stationary Batch Plants",
       "Silos, Mixers & Conveyors",
       "Control Systems",
-    ],
-  },
-  {
-    icon: Construction,
-    title: "Slip Form Pavers",
-    label: "Precision Paving",
-    items: [
-      "Road Construction",
-      "Curbs & Gutters",
-      "Sidewalks",
-      "Industrial Slabs",
-      "Infrastructure Projects",
     ],
   },
   {
@@ -118,9 +126,73 @@ export default function Equipment() {
           </p>
         </div>
 
+        {/* FEATURED — Slipform Paver / TRAILrider */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6 }}
+          data-testid="featured-trailrider"
+          className="mt-14 relative grid grid-cols-1 lg:grid-cols-12 gap-0 border border-red-600 shadow-2xl shadow-red-600/10 overflow-hidden"
+        >
+          {/* Image side */}
+          <div className="lg:col-span-7 relative aspect-[16/10] lg:aspect-auto lg:min-h-[460px] overflow-hidden bg-zinc-200">
+            <img
+              src={FEATURED.image}
+              alt={FEATURED.title}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute top-5 left-5 flex items-center gap-2">
+              <span className="inline-flex items-center gap-2 bg-red-600 text-white px-4 py-2 text-xs font-bold uppercase tracking-[0.25em] shadow-lg">
+                <span className="h-2 w-2 bg-white animate-pulse rounded-full" />
+                {FEATURED.badge}
+              </span>
+            </div>
+          </div>
+
+          {/* Text side */}
+          <div className="lg:col-span-5 bg-white p-7 lg:p-10 flex flex-col">
+            <div className="flex items-center gap-3 mb-3">
+              <FEATURED.icon className="h-6 w-6 text-red-600" />
+              <span className="text-xs uppercase tracking-[0.3em] text-red-600 font-bold">
+                {FEATURED.subtitle}
+              </span>
+            </div>
+            <h3 className="font-display uppercase tracking-tight font-bold text-3xl sm:text-4xl text-zinc-900 leading-tight">
+              {FEATURED.title}
+            </h3>
+            <p className="mt-4 text-zinc-700 text-sm leading-relaxed">
+              {FEATURED.description}
+            </p>
+            <div className="mt-5">
+              <div className="text-[10px] uppercase tracking-[0.25em] text-zinc-500 font-bold mb-2">
+                Ideal for
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {FEATURED.applications.map((a) => (
+                  <span
+                    key={a}
+                    className="bg-zinc-100 border border-zinc-200 text-zinc-800 px-3 py-1 text-xs font-semibold"
+                  >
+                    {a}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <Link
+              to={FEATURED.href}
+              data-testid="featured-trailrider-cta"
+              className="mt-auto pt-6 inline-flex items-center justify-between bg-red-600 hover:bg-red-500 text-white px-5 h-12 uppercase font-bold tracking-widest text-xs transition-colors group"
+            >
+              <span>View Details & Specs</span>
+              <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </Link>
+          </div>
+        </motion.div>
+
         <div
           data-testid="equipment-grid"
-          className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5"
+          className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5"
         >
           {GROUPS.map((g, idx) => (
             <motion.div

@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { COMPANY } from "@/lib/constants";
 
 const LOGO_SRC = "/brand/river-road-logo.png";
 
 const NAV_LINKS = [
-  { label: "Services", href: "#services" },
-  { label: "Equipment", href: "#equipment" },
-  { label: "About", href: "#about" },
-  { label: "Industries", href: "#industries" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#quote" },
+  { label: "Services", href: "/#services" },
+  { label: "Equipment", href: "/#equipment" },
+  { label: "About", href: "/#about" },
+  { label: "Industries", href: "/#industries" },
+  { label: "Gallery", href: "/#gallery" },
+  { label: "Contact", href: "/#quote" },
 ];
 
 export default function Navbar() {
@@ -29,55 +29,85 @@ export default function Navbar() {
   return (
     <header
       data-testid="site-navbar"
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         scrolled
-          ? "bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800"
-          : "bg-transparent border-b border-transparent"
+          ? "bg-zinc-950/95 backdrop-blur-md border-b border-zinc-800"
+          : "bg-zinc-950/70 backdrop-blur-sm border-b border-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
+      {/* Row 1 — DESKTOP ONLY: bigger logo + contact strip */}
+      <div className="hidden lg:block border-b border-zinc-800/60">
+        <div className="mx-auto max-w-7xl px-10 py-3 flex items-center justify-between">
+          <a
+            href="/#top"
+            data-testid="navbar-logo-desktop"
+            className="flex items-center group"
+            aria-label="River Road Custom Metal Fabrication"
+          >
+            <img
+              src={LOGO_SRC}
+              alt="River Road Custom Metal Fabrication"
+              className="h-16 xl:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+            />
+          </a>
+
+          <div className="flex items-center gap-8 text-sm">
+            <a
+              href={`tel:${COMPANY.phoneTel}`}
+              data-testid="navbar-phone-desktop"
+              className="flex items-center gap-2 text-zinc-300 hover:text-red-500 transition-colors font-bold tracking-wider"
+            >
+              <Phone className="h-4 w-4 text-red-500" />
+              {COMPANY.phone}
+            </a>
+            <a
+              href={`mailto:${COMPANY.email}`}
+              data-testid="navbar-email-desktop"
+              className="hidden xl:flex items-center gap-2 text-zinc-400 hover:text-red-500 transition-colors"
+            >
+              <Mail className="h-4 w-4 text-red-500" />
+              {COMPANY.email}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Row 2 — nav links (desktop) / logo + hamburger (mobile) */}
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 h-16 flex items-center justify-between gap-4">
+        {/* Mobile small logo */}
         <a
-          href="#top"
-          data-testid="navbar-logo"
-          className="flex items-center gap-3 group"
+          href="/#top"
+          data-testid="navbar-logo-mobile"
+          className="lg:hidden flex items-center"
           aria-label="River Road Custom Metal Fabrication"
         >
           <img
             src={LOGO_SRC}
-            alt="River Road Custom Metal Fabrication"
-            className="h-9 sm:h-11 lg:h-12 w-auto object-contain"
+            alt="River Road"
+            className="h-9 w-auto object-contain"
           />
         </a>
 
-        <nav className="hidden lg:flex items-center gap-9">
+        <nav className="hidden lg:flex items-center gap-8 flex-1">
           {NAV_LINKS.map((l) => (
             <a
               key={l.href}
               href={l.href}
               data-testid={`nav-link-${l.label.toLowerCase()}`}
-              className="text-sm font-semibold uppercase tracking-wider text-zinc-300 hover:text-red-500 transition-colors"
+              className="text-sm font-bold uppercase tracking-wider text-zinc-300 hover:text-red-500 transition-colors"
             >
               {l.label}
             </a>
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-4">
-          <a
-            href={`tel:${COMPANY.phoneTel}`}
-            data-testid="navbar-phone"
-            className="text-sm font-semibold tracking-wider text-zinc-300 hover:text-red-500"
-          >
-            {COMPANY.phone}
-          </a>
-          <Button
-            asChild
-            data-testid="navbar-quote-btn"
-            className="rounded-none bg-red-600 hover:bg-red-500 text-white uppercase font-bold tracking-wider px-5"
-          >
-            <a href="#quote">Get Quote</a>
-          </Button>
-        </div>
+        <Button
+          asChild
+          data-testid="navbar-quote-btn"
+          className="hidden lg:inline-flex rounded-none bg-red-600 hover:bg-red-500 text-white uppercase font-bold tracking-wider px-5 h-10 shadow-lg shadow-red-600/20"
+        >
+          <a href="/#quote">Get Quote</a>
+        </Button>
 
         <button
           data-testid="navbar-mobile-toggle"
@@ -110,13 +140,19 @@ export default function Navbar() {
               data-testid="mobile-quote-btn"
               className="rounded-none bg-red-600 hover:bg-red-500 text-white uppercase font-bold tracking-wider"
             >
-              <a href="#quote" onClick={() => setOpen(false)}>
+              <a href="/#quote" onClick={() => setOpen(false)}>
                 Get Quote
               </a>
             </Button>
+            <a
+              href={`tel:${COMPANY.phoneTel}`}
+              className="text-zinc-400 hover:text-red-500 text-sm font-semibold tracking-wider mt-2 flex items-center gap-2"
+            >
+              <Phone className="h-4 w-4" /> {COMPANY.phone}
+            </a>
             <Link
               to="/admin/login"
-              className="text-xs text-zinc-500 hover:text-red-500 tracking-wider uppercase mt-2"
+              className="text-xs text-zinc-600 hover:text-red-500 tracking-wider uppercase"
             >
               Admin Login
             </Link>

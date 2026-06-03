@@ -18,7 +18,7 @@ export default function Footer() {
             className="h-20 w-auto object-contain"
           />
           <p className="text-sm text-zinc-400 max-w-sm">
-            A woman-owned Oregon business providing custom metal fabrication,
+            A trusted Oregon business providing custom metal fabrication,
             welding, heavy equipment repair, and aggregate equipment solutions
             built to perform.
           </p>

@@ -2,8 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, MapPin, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const HERO_IMG =
-  "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=2000&q=80";
+const HERO_IMG = "/projects/hogan-dairy.jpg";
 
 export default function Hero() {
   return (
@@ -26,7 +25,7 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10 pt-40 pb-24 lg:pt-48 lg:pb-32">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10 pt-44 pb-24 lg:pt-56 lg:pb-32">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -38,7 +37,7 @@ export default function Hero() {
             data-testid="hero-eyebrow"
             className="text-xs sm:text-sm uppercase tracking-[0.35em] text-red-500 font-bold"
           >
-            Oregon • Woman-Owned • Since Day One
+            Salem, Oregon • Marion County • Since Day One
           </span>
         </motion.div>
 
@@ -102,7 +101,7 @@ export default function Hero() {
           className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-px bg-zinc-800 max-w-3xl border border-zinc-800"
         >
           {[
-            { icon: Award, label: "Woman-Owned", sub: "Oregon Business" },
+            { icon: Award, label: "Trusted Quality", sub: "Built to Last" },
             { icon: ShieldCheck, label: "Safety-Focused", sub: "Honest Pricing" },
             { icon: MapPin, label: "Marion County", sub: "Local Service" },
           ].map(({ icon: Icon, label, sub }) => (
