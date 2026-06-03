@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/sonner";
 
 import { AuthProvider } from "@/context/AuthContext";
 import ProtectedRoute from "@/components/site/ProtectedRoute";
+import ScrollToTop from "@/components/site/ScrollToTop";
 
 import Home from "@/pages/Home";
 import Trailrider from "@/pages/Trailrider";
@@ -16,6 +17,7 @@ function App() {
     <div className="App" data-testid="app-root">
       <AuthProvider>
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/trailrider" element={<Trailrider />} />
