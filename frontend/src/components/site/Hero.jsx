@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, MapPin, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const HERO_IMG = "/projects/hogan-dairy.jpg";
+const HERO_IMG = "/projects/hero-trailrider.jpg";
 
 export default function Hero() {
   return (
