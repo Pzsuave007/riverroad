@@ -190,6 +190,48 @@ export default function Equipment() {
           </div>
         </motion.div>
 
+        {/* Parts callout teaser — links to /trailrider full page */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5 }}
+          data-testid="parts-callout-teaser"
+          className="mt-4 lg:mt-5 grid grid-cols-1 lg:grid-cols-12 border border-zinc-200 bg-white overflow-hidden"
+        >
+          <div className="lg:col-span-7 bg-zinc-50 p-4 lg:p-6 flex items-center justify-center">
+            <img
+              src="/projects/trailrider-parts.png"
+              alt="TRAILrider Model HR — parts callout"
+              className="max-h-[420px] w-auto object-contain"
+            />
+          </div>
+          <div className="lg:col-span-5 p-7 lg:p-10 flex flex-col justify-center bg-zinc-100">
+            <div className="text-xs uppercase tracking-[0.3em] text-red-600 font-bold mb-3">
+              Model HR — Bolted & Modular
+            </div>
+            <h3 className="font-display uppercase tracking-tight font-bold text-2xl sm:text-3xl text-zinc-900 leading-tight">
+              Adjustable Width.
+              <br />
+              Built to Spec.
+            </h3>
+            <p className="mt-4 text-zinc-700 text-sm leading-relaxed">
+              Bolt-on side panels with skid &amp; towing attachment. Variable
+              tow points, depth adjustments &amp; anchor pins. Screed sections of
+              8′, 4′, 1′ and 24″ — combine them to match your project width
+              from 4′ to 12′.
+            </p>
+            <Link
+              to="/trailrider"
+              data-testid="parts-callout-cta"
+              className="mt-6 inline-flex items-center justify-between bg-zinc-900 hover:bg-red-600 text-white px-5 h-12 uppercase font-bold tracking-widest text-xs transition-colors group w-fit"
+            >
+              <span>Explore Full Build</span>
+              <ArrowUpRight className="h-5 w-5 ml-3 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </Link>
+          </div>
+        </motion.div>
+
         <div
           data-testid="equipment-grid"
           className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5"
