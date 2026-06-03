@@ -95,7 +95,7 @@ export default function Gallery() {
               aria-label="Play video"
             >
               <img
-                src={`https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg`}
+                src="/projects/hero-trailrider.jpg"
                 alt="Watch on YouTube"
                 className="absolute inset-0 h-full w-full object-cover img-desat transition-transform duration-500 group-hover:scale-[1.03]"
               />
